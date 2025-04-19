@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const PORT = 3000;
-
-const userRouter = require('./router/user');
+ 
+const userRouter = require('./routes/user');
 
 
 app.set('view engine', 'ejs');
@@ -19,5 +19,5 @@ app.use('/user' , userRouter);
 
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}/user`);
 });
