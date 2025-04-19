@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { query , body , validationResult } = require('express-validator');
+const  User =  require('../model/user_model');
 
 
 router.get('/' , (req , res) => {
