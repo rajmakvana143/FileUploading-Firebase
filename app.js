@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const dotenv = require('dotenv');
+const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 dotenv.config();
 const PORT = 3000;
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+app.use(cookieParser());
 
 
 app.use('/user' , userRouter);
