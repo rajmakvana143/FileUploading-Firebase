@@ -8,6 +8,7 @@ dotenv.config();
 const PORT = 3000;
  
 const userRouter = require('./routes/user');
+const homeRouter = require('./routes/index');
 const connectDB = require('./config/dataBase');
 connectDB();
 
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 
+app.use('/' , homeRouter);
 app.use('/user' , userRouter);
 
 
